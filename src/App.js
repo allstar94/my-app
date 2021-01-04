@@ -10,7 +10,7 @@ class App extends React.Component {
   };
 
   getMovies = async () => {
-    const { data: { data: { movies } } } = await axios.get("http://yts-proxy.now.sh/list_movies.json?sart_by=rating");
+    const { data: { data: { movies } } } = await axios.get("https://yts-proxy.now.sh/list_movies.json?sart_by=rating");
     this.setState({ movies, isLoading: false });
   }
   componentDidMount() {
@@ -23,7 +23,7 @@ class App extends React.Component {
       <section className="container">
          {isLoading ? (
           <div className="loader">
-            <span className="loader__text">Loading...</span>
+            <span className="loader__text">Loading.....</span>
           </div>
         ) : (
           <div className="movies">
